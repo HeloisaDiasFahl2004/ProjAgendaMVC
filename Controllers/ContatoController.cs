@@ -1,5 +1,7 @@
 ﻿using Models;
+using Services;
 using System;
+using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -9,8 +11,11 @@ namespace Controllers
 
         public Contato InserirContato(Contato contato)
         {
-            return contato;
+            return new ContatoServices().InserirContato(contato);
         }
-        
+        public List<Contato> ConsultaTodos()
+        {
+            return new ContatoServices().ConsultaTodos();
+        }
     }
 }
