@@ -40,7 +40,7 @@ namespace Services
         {
             // conn.Open();  // uso quando não uso o método BuscarConexao
 
-            BuscarConexao(); // uso quando uso o método BuscarConexao
+           var conn=  BuscarConexao(); // uso quando uso o método BuscarConexao
 
             SqlCommand dataInsert = new SqlCommand();  // tenho o objeto para criar o comando
                                                        //  dataInsert.CommandText = "INSERT INTO CONTATOS (Nome,Telefone) VALUES(@Nome,@Telefone)"; // pode inserir assim ou do jeito abaixo
@@ -63,10 +63,10 @@ namespace Services
         #endregion
 
         //SELECT
-        #region
+        #region Select
         public List<Contato> ConsultaTodos()
         {
-            BuscarConexao();
+           var conn= BuscarConexao();
             SqlCommand dataSelect = new SqlCommand();
 
             dataSelect.CommandText = "SELECT * FROM Contatos";
